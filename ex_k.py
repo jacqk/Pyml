@@ -51,11 +51,11 @@ def classify(dataset, k, inx):
 def train_file_digit():
 #    test = pd.read_fwf(test_file,header=None, widths=[1] * 32)
     a, b = commands.getstatusoutput(\
-    'ls /home/kfc/machineLearning/trainingDigits')    
+    'ls ./trainingDigits')    
     b = b.split('\n')
     training_set = {}
     for item in b:
-        training_set[item] = (pd.read_fwf('/home/kfc/machineLearning/trainingDigits/' + item, \
+        training_set[item] = (pd.read_fwf('./trainingDigits/' + item, \
         header=None, widths=[1] * 32))
     training_set = pd.Panel(training_set) 
     print training_set
@@ -63,14 +63,14 @@ def train_file_digit():
     
 def classify_1(k, training_set):
     a, test_files = commands.getstatusoutput(\
-    'ls /home/kfc/machineLearning/testDigits')
+    'ls ./testDigits')
     test_files = test_files.split('\n')
     
     count = np.empty(len(test_files))
     
     
     for i, test_file in enumerate(test_files):
-        test = pd.read_fwf('/home/kfc/machineLearning/testDigits/' + test_file,\
+        test = pd.read_fwf('./testDigits/' + test_file,\
         header=None, widths=[1] * 32)
         
         result_list = []
