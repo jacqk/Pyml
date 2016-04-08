@@ -91,4 +91,4 @@ def classify_1(k, training_set):
     return p
     
 #train_file_digit()
-print classify_1(30, train_file_digit())
+#print classify_1(30, train_file_digit())
